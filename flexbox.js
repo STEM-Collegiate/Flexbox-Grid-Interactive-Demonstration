@@ -172,7 +172,9 @@ $(document).ready(function () {
         // Go through every flex item and print its styles if any
         $("#flexbox .flex-item").each(function () {
             let id = $(this).attr("id");
+            console.log("id: " + id);
             let itemCss = $(this).attr("style") || "";
+            console.log("itemCss: " + itemCss);
             if (itemCss.trim() !== "") {
                 output += `#${id} {\n`;
                 itemCss.split(";").forEach(rule => {
