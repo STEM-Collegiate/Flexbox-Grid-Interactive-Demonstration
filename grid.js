@@ -107,31 +107,75 @@ $(function () {
         let $this = $(this);
 
         if ($this.attr("id") === "active") {
-            // Deactivate currently active item
+            // ---- Deselect active item ----
             let originalId = $this.data("original-id");
-            $this.attr("id", originalId).removeClass("active");
+            $this.attr("id", originalId);
             $this.removeData("original-id");
+
             $activeItem = null;
             $("#selected-element").text("none");
+
+            // Reset sliders to defaults
+            $("#col-start").val(0).siblings("span").text(0);
+            $("#col-span").val(0).siblings("span").text(0);
+            $("#row-start").val(0).siblings("span").text(0);
+            $("#row-span").val(0).siblings("span").text(0);
+
         } else {
-            // Deactivate any currently active item
+            // ---- Deactivate any currently active item ----
             let $currentActive = $("#gridbox #active");
             if ($currentActive.length) {
-                let originalId = $currentActive.data("original-id");
-                $currentActive.attr("id", originalId).removeClass("active");
+                let oldId = $currentActive.data("original-id");
+                $currentActive.attr("id", oldId);
                 $currentActive.removeData("original-id");
             }
 
-            // Activate this item
+            // ---- Activate this item ----
             let oldId = $this.attr("id");
             $this.data("original-id", oldId);
-            $this.attr("id", "active").addClass("active");
+            $this.attr("id", "active");
+
             $activeItem = $this;
             $("#selected-element").text(oldId);
+
+            // --- Sync sliders with current styles ---
+            let cs = $this.css("grid-column-start");
+            let ce = $this.css("grid-column-end");
+            let rs = $this.css("grid-row-start");
+            let re = $this.css("grid-row-end");
+
+            // Convert values like "auto" or "span N"
+            let colStart = cs === "auto" ? 0 : parseInt(cs) || 0;
+            let colSpan = 0;
+            if (ce && ce.startsWith("span")) {
+                colSpan = parseInt(ce.replace("span", "").trim()) || 0;
+            } else if (ce && colStart > 0) {
+                colSpan = (parseInt(ce) - colStart) || 0;
+            }
+
+            let rowStart = rs === "auto" ? 0 : parseInt(rs) || 0;
+            let rowSpan = 0;
+            if (re && re.startsWith("span")) {
+                rowSpan = parseInt(re.replace("span", "").trim()) || 0;
+            } else if (re && rowStart > 0) {
+                rowSpan = (parseInt(re) - rowStart) || 0;
+            }
+
+            // Update sliders + labels
+            $("#col-start").val(colStart);
+            $("#col-start-value").text(colStart);
+            $("#col-span").val(colSpan);
+            $("#col-span-value").text(colSpan);
+            $("#row-start").val(rowStart);
+            $("#row-start-value").text(rowStart);
+            $("#row-span").val(rowSpan);
+            $("#row-span-value").text(rowSpan);
         }
 
         updateCssOutput();
     });
+
+
 
 
     // Item controls
@@ -205,16 +249,26 @@ $(function () {
         updateCssOutput();
     });
 
-    // Reset
+    // ---- RESET BUTTON ----
     $("#reset").on("click", function () {
+        // Clear inline styles
+        $("#gridbox").removeAttr("style");
+        $("#gridbox .grid-item").removeAttr("style");
+
+        // Reset controls
         $("#display-grid").prop("checked", false);
-        $("#col-count").val(initialState.colCount).trigger("input");
-        $("#row-count").val(initialState.rowCount).trigger("input");
-        $("#gap").val(initialState.gap).trigger("input");
-        $("#item-count").val(initialState.itemCount).trigger("input");
-        $("#selected-element").text("none");
+        $("#col-count").val(3).trigger("input");
+        $("#row-count").val(0).trigger("input");
+        $("#gap").val(10).trigger("input");
+        $("#item-count").val(6).trigger("input");
+
+        // Reset item selection
         $activeItem = null;
+        $("#selected-element").text("none");
+
+        updateCssOutput();
     });
+
 
     // Toggle code panel
     $("#toggle-code").on("click", function () {

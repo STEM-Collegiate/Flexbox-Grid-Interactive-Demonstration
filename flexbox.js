@@ -112,39 +112,29 @@ $(document).ready(function () {
 
     // ---- RESET BUTTON ----
     $("#reset").on("click", function () {
-        // Reset flexbox container styles
-        $("#flexbox").css({
-            display: initialState.display,
-            flexDirection: initialState.flexDirection,
-            justifyContent: initialState.justifyContent,
-            alignItems: initialState.alignItems,
-            width: initialState.flexboxWidth
-        });
+        // Clear all inline styles on container + children
+        $("#flexbox").removeAttr("style");
+        $("#flexbox .flex-item").removeAttr("style");
 
-        // Reset flexbox container controls
+        // Reset controls
         $("#display-type").prop("checked", false);
-        $("#flex-direction").val(initialState.flexDirection);
-        $("#justify-content").val(initialState.justifyContent);
-        $("#align-items").val(initialState.alignItems);
-        $("#flexbox-width").val(parseInt(initialState.flexboxWidth));
-        $("#flexbox-width-value").text(initialState.flexboxWidth);
+        $("#flex-direction").val("row");
+        $("#justify-content").val("flex-start");
+        $("#align-items").val("stretch");
+        $("#flexbox-width").val(100);
+        $("#flexbox-width-value").text("100%");
+        $("#item-count").val(6);
+        $("#item-count-value").text(6);
 
-        // Reset number of items
-        $("#item-count").val(initialState.itemCount);
-        $("#item-count-value").text(initialState.itemCount);
-
-        let $flexbox = $("#flexbox");
-        $flexbox.empty();
-        for (let i = 1; i <= initialState.itemCount; i++) {
-            $flexbox.append(`<div class="flex-item"><p>Item ${i}</p></div>`);
+        // Rebuild children
+        let $flexbox = $("#flexbox").empty();
+        for (let i = 1; i <= 6; i++) {
+            $flexbox.append(`<div class="flex-item" id="item${i}"><p>Item ${i}</p></div>`);
         }
 
-        // Reset selected element
+        // Reset selection + per-item controls
         $activeItem = null;
         $("#selected-element").text("none");
-        $("#flexbox .flex-item").removeClass("active");
-
-        // Reset per-item controls
         $("#align-self").val("auto");
         $("#order").val(0);
         $("#flex-grow").val(0);
@@ -152,7 +142,12 @@ $(document).ready(function () {
         $("#flex-shrink").val(1);
         $("#flex-shrink-value").text(1);
         $("input[name='flex'][value='0']").prop("checked", true);
+        $("input[name='child-size'][value='auto']").prop("checked", true);
+        childSizeMode = "auto";
+
+        updateCssOutput();
     });
+
 
     // ---- UPDATE CSS OUTPUT ----
     function updateCssOutput() {

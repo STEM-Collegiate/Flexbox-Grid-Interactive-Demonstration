@@ -108,15 +108,14 @@ footer {
   border: 4px solid transparent;
   cursor: pointer;
   color: white;
-  transition: 0.2s;
   overflow: hidden;
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
 
 #active {
-  background: linear-gradient(var(--gd-ang), hsl(103, 100%, 82%), hsl(137, 100%, 57%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(0, 0%, 100%), hsl(98, 100%, 71%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(103, 100%, 70%), hsl(137, 100%, 50%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(100, 100%, 85%), hsl(98, 100%, 60%)) border-box;
   color: rgb(2, 2, 107);
 }
 
@@ -156,126 +155,126 @@ a:visited {
 }
 
 #item1 {
-  background: linear-gradient(var(--gd-ang), hsl(0, 90%, 55%), hsl(0, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(0, 90%, 70%), hsl(0, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(0, 90%, 45%), hsl(0, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(0, 90%, 55%), hsl(0, 90%, 35%)) border-box;
 }
 
 #item2 {
-  background: linear-gradient(var(--gd-ang), hsl(15, 90%, 55%), hsl(15, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(15, 90%, 70%), hsl(15, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(15, 90%, 45%), hsl(15, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(15, 90%, 55%), hsl(15, 90%, 35%)) border-box;
 }
 
 #item3 {
-  background: linear-gradient(var(--gd-ang), hsl(30, 90%, 55%), hsl(30, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(30, 90%, 70%), hsl(30, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(30, 90%, 45%), hsl(30, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(30, 90%, 55%), hsl(30, 90%, 35%)) border-box;
 }
 
 #item4 {
-  background: linear-gradient(var(--gd-ang), hsl(45, 90%, 55%), hsl(45, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(45, 90%, 70%), hsl(45, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(45, 90%, 45%), hsl(45, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(45, 90%, 55%), hsl(45, 90%, 35%)) border-box;
 }
 
 #item5 {
-  background: linear-gradient(var(--gd-ang), hsl(60, 90%, 55%), hsl(60, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(60, 90%, 70%), hsl(60, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(60, 90%, 45%), hsl(60, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(60, 90%, 55%), hsl(60, 90%, 35%)) border-box;
 }
 
 #item6 {
-  background: linear-gradient(var(--gd-ang), hsl(75, 90%, 55%), hsl(75, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(75, 90%, 70%), hsl(75, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(75, 90%, 45%), hsl(75, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(75, 90%, 55%), hsl(75, 90%, 35%)) border-box;
 }
 
 #item7 {
-  background: linear-gradient(var(--gd-ang), hsl(90, 90%, 55%), hsl(90, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(90, 90%, 70%), hsl(90, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(90, 90%, 45%), hsl(90, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(90, 90%, 55%), hsl(90, 90%, 35%)) border-box;
 }
 
 #item8 {
-  background: linear-gradient(var(--gd-ang), hsl(105, 90%, 55%), hsl(105, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(105, 90%, 70%), hsl(105, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(105, 90%, 45%), hsl(105, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(105, 90%, 55%), hsl(105, 90%, 35%)) border-box;
 }
 
 #item9 {
-  background: linear-gradient(var(--gd-ang), hsl(120, 90%, 55%), hsl(120, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(120, 90%, 70%), hsl(120, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(120, 90%, 45%), hsl(120, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(120, 90%, 55%), hsl(120, 90%, 35%)) border-box;
 }
 
 #item10 {
-  background: linear-gradient(var(--gd-ang), hsl(135, 90%, 55%), hsl(135, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(135, 90%, 70%), hsl(135, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(135, 90%, 45%), hsl(135, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(135, 90%, 55%), hsl(135, 90%, 35%)) border-box;
 }
 
 #item11 {
-  background: linear-gradient(var(--gd-ang), hsl(150, 90%, 55%), hsl(150, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(150, 90%, 70%), hsl(150, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(150, 90%, 45%), hsl(150, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(150, 90%, 55%), hsl(150, 90%, 35%)) border-box;
 }
 
 #item12 {
-  background: linear-gradient(var(--gd-ang), hsl(165, 90%, 55%), hsl(165, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(165, 90%, 70%), hsl(165, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(165, 90%, 45%), hsl(165, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(165, 90%, 55%), hsl(165, 90%, 35%)) border-box;
 }
 
 #item13 {
-  background: linear-gradient(var(--gd-ang), hsl(180, 90%, 55%), hsl(180, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(180, 90%, 70%), hsl(180, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(180, 90%, 45%), hsl(180, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(180, 90%, 55%), hsl(180, 90%, 35%)) border-box;
 }
 
 #item14 {
-  background: linear-gradient(var(--gd-ang), hsl(195, 90%, 55%), hsl(195, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(195, 90%, 70%), hsl(195, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(195, 90%, 45%), hsl(195, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(195, 90%, 55%), hsl(195, 90%, 35%)) border-box;
 }
 
 #item15 {
-  background: linear-gradient(var(--gd-ang), hsl(210, 90%, 55%), hsl(210, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(210, 90%, 70%), hsl(210, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(210, 90%, 45%), hsl(210, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(210, 90%, 55%), hsl(210, 90%, 35%)) border-box;
 }
 
 #item16 {
-  background: linear-gradient(var(--gd-ang), hsl(225, 90%, 55%), hsl(225, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(225, 90%, 70%), hsl(225, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(225, 90%, 45%), hsl(225, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(225, 90%, 55%), hsl(225, 90%, 35%)) border-box;
 }
 
 #item17 {
-  background: linear-gradient(var(--gd-ang), hsl(240, 90%, 55%), hsl(240, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(240, 90%, 70%), hsl(240, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(240, 90%, 45%), hsl(240, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(240, 90%, 55%), hsl(240, 90%, 35%)) border-box;
 }
 
 #item18 {
-  background: linear-gradient(var(--gd-ang), hsl(255, 90%, 55%), hsl(255, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(255, 90%, 70%), hsl(255, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(255, 90%, 45%), hsl(255, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(255, 90%, 55%), hsl(255, 90%, 35%)) border-box;
 }
 
 #item19 {
-  background: linear-gradient(var(--gd-ang), hsl(270, 90%, 55%), hsl(270, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(270, 90%, 70%), hsl(270, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(270, 90%, 45%), hsl(270, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(270, 90%, 55%), hsl(270, 90%, 35%)) border-box;
 }
 
 #item20 {
-  background: linear-gradient(var(--gd-ang), hsl(285, 90%, 55%), hsl(285, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(285, 90%, 70%), hsl(285, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(285, 90%, 45%), hsl(285, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(285, 90%, 55%), hsl(285, 90%, 35%)) border-box;
 }
 
 #item21 {
-  background: linear-gradient(var(--gd-ang), hsl(300, 90%, 55%), hsl(300, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(300, 90%, 70%), hsl(300, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(300, 90%, 45%), hsl(300, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(300, 90%, 55%), hsl(300, 90%, 35%)) border-box;
 }
 
 #item22 {
-  background: linear-gradient(var(--gd-ang), hsl(315, 90%, 55%), hsl(315, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(315, 90%, 70%), hsl(315, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(315, 90%, 45%), hsl(315, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(315, 90%, 55%), hsl(315, 90%, 35%)) border-box;
 }
 
 #item23 {
-  background: linear-gradient(var(--gd-ang), hsl(330, 90%, 55%), hsl(330, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(330, 90%, 70%), hsl(330, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(330, 90%, 45%), hsl(330, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(330, 90%, 55%), hsl(330, 90%, 35%)) border-box;
 }
 
 #item24 {
-  background: linear-gradient(var(--gd-ang), hsl(345, 90%, 55%), hsl(345, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(345, 90%, 70%), hsl(345, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(345, 90%, 45%), hsl(345, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(345, 90%, 55%), hsl(345, 90%, 35%)) border-box;
 }
 
 #item25 {
-  background: linear-gradient(var(--gd-ang), hsl(360, 90%, 55%), hsl(360, 90%, 35%)) padding-box,
-    linear-gradient(var(--gd-ang), hsl(360, 90%, 70%), hsl(360, 90%, 45%)) border-box;
+  background: linear-gradient(var(--gd-ang), hsl(360, 90%, 45%), hsl(360, 90%, 25%)) padding-box,
+    linear-gradient(var(--gd-ang), hsl(360, 90%, 55%), hsl(360, 90%, 35%)) border-box;
 }
