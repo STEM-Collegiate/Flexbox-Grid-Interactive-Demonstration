@@ -1,0 +1,113 @@
+:root {
+  --bg-gd-st: #333;
+  --bg-gd-end: #000;
+  --text: #fff;
+  --gd-ang: 135deg;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* stop body scrolling */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(var(--gd-ang), var(--bg-gd-st), var(--bg-gd-end));
+  color: var(--text);
+  font-family: sans-serif;
+  text-align: center;
+}
+
+header, footer {
+  flex-shrink: 0;
+}
+
+h1 {
+  padding: 30px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  overflow: hidden; /* stop main scrolling */
+}
+
+#demo {
+  flex: 1;
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden; /* ensure demo doesn’t scroll */
+  height: 100%;
+  transition: 1s;
+}
+
+.show-code { grid-template-columns: 1fr 300px 300px; }
+.hide-code { grid-template-columns: 1fr 300px 0px; }
+
+#gridbox {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 4px solid #666;
+  display: block;
+  gap: 5px;
+  overflow: hidden; /* contain items */
+}
+
+.grid-item {
+  min-width: 0;  /* let items shrink */
+  min-height: 0; /* let items shrink */
+  display: flex; /* center text */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #222;
+  cursor: pointer;
+  color: #000;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.grid-item.active {
+  outline: 3px solid yellow;
+}
+
+#controls {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+input, select {
+  cursor: pointer;
+}
+
+#css-output-container {
+  background: #111;
+  color: #0f0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #333;
+  font-family: monospace;
+  text-align: left;
+  overflow: auto;
+}

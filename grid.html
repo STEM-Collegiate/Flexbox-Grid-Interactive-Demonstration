@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Demonstration</title>
+  <link rel="stylesheet" href="grid.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="grid.js"></script>
+</head>
+
+<body class="flex column">
+<header>
+  <h1>CSS Grid Demonstration Playground</h1>
+</header>
+<main>
+  <div id="demo" class="hide-code">
+    <div id="gridbox">
+      <!-- default 6 items -->
+      <div class="grid-item" id="item1"><p>Item 1</p></div>
+      <div class="grid-item" id="item2"><p>Item 2</p></div>
+      <div class="grid-item" id="item3"><p>Item 3</p></div>
+      <div class="grid-item" id="item4"><p>Item 4</p></div>
+      <div class="grid-item" id="item5"><p>Item 5</p></div>
+      <div class="grid-item" id="item6"><p>Item 6</p></div>
+    </div>
+
+    <div id="controls">
+      <div id="toggle-code-container">
+        <button id="toggle-code">Show Code</button>
+      </div>
+
+      <div id="display-container">
+        <input id="display-grid" type="checkbox">
+        <label for="display-grid">Grid</label>
+      </div>
+
+      <div id="columns-template">
+        <label>Columns:</label>
+        <input type="range" id="col-count" min="1" max="5" value="3">
+        <span id="col-count-value">3</span>
+        <div id="col-inputs"></div>
+      </div>
+
+      <div id="rows-template">
+        <label>Rows:</label>
+        <input type="range" id="row-count" min="0" max="5" value="0">
+        <span id="row-count-value">0</span>
+        <div id="row-inputs"></div>
+      </div>
+
+      <div id="grid-auto-flow">
+        <label for="auto-flow">Grid Fill:</label>
+        <select id="auto-flow">
+          <option value="row">row</option>
+          <option value="column">column</option>
+          <option value="dense">dense</option>
+          <option value="row dense">row dense</option>
+          <option value="column dense">column dense</option>
+        </select>
+      </div>
+
+      <div id="gap-container">
+        <label for="gap">Gap (px):</label>
+        <input type="range" id="gap" min="0" max="100" step="5" value="10">
+        <span id="gap-value">10</span>
+      </div>
+
+      <div id="item-count-container">
+        <label for="item-count">Number of Items:</label>
+        <input type="range" id="item-count" min="1" max="25" value="6">
+        <span id="item-count-value">6</span>
+      </div>
+
+      <hr>
+      <p>Selected Element: <span id="selected-element">none</span></p>
+
+      <div id="col-start-container">
+        <label for="col-start">Column Start:</label>
+        <input type="range" id="col-start" min="0" max="5" value="0">
+        <span id="col-start-value">1</span>
+      </div>
+
+      <div id="col-span-container">
+        <label for="col-span">Column Span:</label>
+        <input type="range" id="col-span" min="0" max="5" value="0">
+        <span id="col-span-value">1</span>
+      </div>
+
+      <div id="row-start-container">
+        <label for="row-start">Row Start:</label>
+        <input type="range" id="row-start" min="0" max="5" value="0">
+        <span id="row-start-value">1</span>
+      </div>
+
+      <div id="row-span-container">
+        <label for="row-span">Row Span:</label>
+        <input type="range" id="row-span" min="0" max="5" value="0">
+        <span id="row-span-value">1</span>
+      </div>
+
+      <hr>
+      <div id="reset-container">
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <div id="css-output-container">
+      <h3>Generated CSS</h3>
+      <pre id="css-output"></pre>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>© 2025 Nathan Forsyth</p>
+</footer>
+</body>
+</html>

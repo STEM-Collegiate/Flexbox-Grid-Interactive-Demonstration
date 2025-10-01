@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Demonstration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="flex column">
+    <header>
+        <h1>Flex Box Demonstration Playground</h1>
+    </header>
+    <main>
+        <div id="demo" class="hide-code">
+            <div id="flexbox">
+  <div class="flex-item" id="item1"><p>Item 1</p></div>
+  <div class="flex-item" id="item2"><p>Item 2</p></div>
+  <div class="flex-item" id="item3"><p>Item 3</p></div>
+  <div class="flex-item" id="item4"><p>Item 4</p></div>
+  <div class="flex-item" id="item5"><p>Item 5</p></div>
+  <div class="flex-item" id="item6"><p>Item 6</p></div>
+</div>
+            <div id="controls">
+                <div id="toggle-code-container">
+  <button id="toggle-code">Show Code</button>
+</div>
+
+                <div id="display-container">
+                    <input name="display-type" id="display-type" type="checkbox" value="flexbox">
+                    <label for="display-type">Flexbox</label>
+                </div>
+                <div id="flex-direction-container">
+                    <label for="flex-direction">Flex Direction:</label>
+                    <select id="flex-direction" name="flex-direction">
+                        <option value="row">row (default)</option>
+                        <option value="column">column</option>
+                        <option value="row-reverse">row-reverse</option>
+                        <option value="column-reverse">column-reverse</option>
+                    </select>
+                </div>
+                <div id="justify-content-container">
+                    <label for="justify-content">Justify Content:</label>
+                    <select id="justify-content" name="justify-content">
+                        <option value="flex-start">flex-start (default)</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="space-between">space-between</option>
+                        <option value="space-around">space-around</option>
+                        <option value="space-evenly">space-evenly</option>
+                    </select>
+                </div>
+                <div id="align-items-container">
+                    <label for="align-items">Align Items:</label>
+                    <select id="align-items" name="align-items">
+                        <option value="stretch">stretch (default)</option>
+                        <option value="center">center</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                    </select>
+                </div>
+                <div id="flexbox-width-container">
+                    <label for="flexbox-width">Width (%):</label>
+                    <input type="range" id="flexbox-width" name="flexbox-width" min="25" max="100" value="100">
+                    <span id="flexbox-width-value">100%</span>
+                </div>
+                <div id="item-count-container">
+                    <label for="item-count">Number of Items:</label>
+                    <input type="range" id="item-count" name="item-count" min="1" max="10" value="6">
+                    <span id="item-count-value">6</span>
+                </div>
+                <hr>
+                <p>Selected Element: <span id="selected-element">none</span></p>
+
+                <div id="align-self-container">
+                    <label for="align-self">Align Self:</label>
+                    <select id="align-self" name="align-self">
+                        <option value="auto">auto (default)</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="center">center</option>
+                        <option value="stretch">stretch</option>
+                    </select>
+                </div>
+
+                <div id="order-container">
+                    <label for="order">Order:</label>
+                    <input type="number" id="order" name="order" value="0">
+                </div>
+
+                <div id="flex-container">
+                    <label>Flex:</label>
+                    <input type="radio" id="flex0" name="flex" value="0" checked>
+                    <label for="flex0">0</label>
+                    <input type="radio" id="flex1" name="flex" value="1">
+                    <label for="flex1">1</label>
+                </div>
+
+                <div id="flex-grow-container">
+                    <label for="flex-grow">Flex Grow:</label>
+                    <input type="range" id="flex-grow" name="flex-grow" min="0" max="5" value="0">
+                    <span id="flex-grow-value">0</span>
+                </div>
+
+                <div id="flex-shrink-container">
+                    <label for="flex-shrink">Flex Shrink:</label>
+                    <input type="range" id="flex-shrink" name="flex-shrink" min="0" max="5" value="1">
+                    <span id="flex-shrink-value">1</span>
+                </div>
+                <hr>
+                <div id="reset-container">
+                    <button id="reset">Reset</button>
+                </div>
+                
+            </div>
+            <div id="css-output-container">
+                    <h3>Generated CSS</h3>
+                    <pre id="css-output"></pre>
+                </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Nathan Forsyth</p>
+    </footer>
+</body>
+
+</html>
