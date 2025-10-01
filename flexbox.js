@@ -2,6 +2,14 @@ $(document).ready(function () {
     let $activeItem = null;
     let childSizeMode = "auto"; // "auto" or "fill"
 
+
+    let $main = $("#main-axis");
+    let $cross = $("#cross-axis");
+    $("#show-axes").prop("checked", false).prop("disabled", true); // uncheck + disable
+
+    $cross.hide();
+    $main.hide();
+
     // Save initial state for reset
     const initialState = {
         display: "block",
@@ -42,12 +50,52 @@ $(document).ready(function () {
 
     // ---- FLEXBOX CONTAINER CONTROLS ----
     $("#display-type").on("change", function () {
-        $("#flexbox").css("display", $(this).is(":checked") ? "flex" : "block");
+        if ($(this).is(":checked")) {
+            $("#flexbox").css("display", "flex");
+            $("#show-axes").prop("disabled", false); // enable axes checkbox
+        } else {
+            $("#flexbox").css("display", "block");
+            $("#show-axes").prop("checked", false).prop("disabled", true); // uncheck + disable
+            $main.hide();
+            $cross.hide();
+        }
+    });
+
+    $("#show-axes").on("change", function () {
+        let dir = $("#flexbox").css("flex-direction"); // get current flex-direction
+        if ($(this).is(':checked')) {
+            $main.show();
+            $cross.show();
+
+            if (dir === "column" || dir === "column-reverse") {
+                $main.removeClass("horizontal").addClass("vertical");
+                $cross.removeClass("vertical").addClass("horizontal");
+            } else {
+                $main.removeClass("vertical").addClass("horizontal");
+                $cross.removeClass("horizontal").addClass("vertical");
+            }
+
+        } else {
+            $main.hide();
+            $cross.hide();
+        }
     });
 
     $("#flex-direction").on("change", function () {
-        $("#flexbox").css("flex-direction", $(this).val());
+        let val = $(this).val();
+        $("#flexbox").css("flex-direction", val);
+
+        if ($("#show-axes").is(":checked")) {
+            if (val === "column" || val === "column-reverse") {
+                $main.removeClass("horizontal").addClass("vertical");
+                $cross.removeClass("vertical").addClass("horizontal");
+            } else {
+                $main.removeClass("vertical").addClass("horizontal");
+                $cross.removeClass("horizontal").addClass("vertical");
+            }
+        }
     });
+
 
     $("#justify-content").on("change", function () {
         $("#flexbox").css("justify-content", $(this).val());

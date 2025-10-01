@@ -18,6 +18,9 @@
     <main>
         <div id="demo" class="hide-code">
             <div id="flexbox">
+
+                <div id="cross-axis" class="horizontal"></div>
+                <div id="main-axis" class="vertical"></div>
                 <div class="flex-item" id="item1">
                     <p>Item 1</p>
                 </div>
@@ -41,10 +44,15 @@
                 <div id="toggle-code-container">
                     <button id="toggle-code">Show Code</button>
                 </div>
-
                 <div id="display-container">
                     <input name="display-type" id="display-type" type="checkbox" value="flexbox">
                     <label for="display-type">Flexbox</label>
+                </div>
+
+                <div id="axes-container">
+                    <input type="checkbox" id="show-axes">
+                    <label for="show-axes">Show Axes | <span id="main-label">Main</span> | <span
+                            id="cross-label">Cross</span></label>
                 </div>
                 <div id="flex-direction-container">
                     <label for="flex-direction">Flex Direction:</label>

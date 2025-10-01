@@ -3,14 +3,14 @@
     --bg-gd-end: #000;
 
     /* Demo (reds → purples) */
-    --dem-gd-st: #ff4d4d;
+    --dem-gd-st: #f78989;
     /* bright red */
-    --dem-gd-end: #7a00ff;
+    --dem-gd-end: #ab64f8;
     /* vibrant purple */
 
-    --dem-bd-st: #ff6b6b;
+    --dem-bd-st: #f7b1b1;
     /* coral */
-    --dem-bd-end: #c70039;
+    --dem-bd-end: #c24f70;
     /* crimson */
 
     /* Inactive (blues → teals) */
@@ -34,6 +34,9 @@
     /* neon yellow */
     --act-bd-end: #00ff7f;
     /* spring green */
+
+    --cross: rgb(136, 255, 106);
+    --main: rgb(255, 0, 0);
 
     --text: rgb(255, 255, 255);
 
@@ -102,6 +105,48 @@ footer {
     border-radius: 20px;
     border: 4px solid transparent;
     gap: 5px;
+    position: relative;
+}
+
+#main-axis,
+#cross-axis {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#main-axis.vertical {
+    height: 110%;
+    border-left: dashed 8px var(--main);
+}
+
+#main-axis.horizontal {
+    width: 101%;
+    border-bottom: dashed 8px var(--main);
+}
+
+#cross-axis.horizontal {
+    border-bottom: dotted 5px var(--cross);
+    width: 101%;
+}
+
+#cross-axis.vertical {
+    border-left: dotted 5px var(--cross);
+    height: 110%;
+}
+
+#cross-label {
+    color: var(--cross);
+}
+
+#main-label {
+    color: var(--main);
+}
+
+.no-display {
+    display: none;
 }
 
 .fill {
