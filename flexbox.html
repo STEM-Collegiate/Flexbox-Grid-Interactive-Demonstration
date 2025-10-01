@@ -5,29 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox Demonstration</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="flexbox.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="script.js"></script>
+    <script src="flexbox.js"></script>
 </head>
 
 <body class="flex column">
     <header>
         <h1>Flex Box Demonstration Playground</h1>
+        <p>Jump to <a href="grid.html">Grid Playground</a>.</p>
     </header>
     <main>
         <div id="demo" class="hide-code">
             <div id="flexbox">
-  <div class="flex-item" id="item1"><p>Item 1</p></div>
-  <div class="flex-item" id="item2"><p>Item 2</p></div>
-  <div class="flex-item" id="item3"><p>Item 3</p></div>
-  <div class="flex-item" id="item4"><p>Item 4</p></div>
-  <div class="flex-item" id="item5"><p>Item 5</p></div>
-  <div class="flex-item" id="item6"><p>Item 6</p></div>
-</div>
+                <div class="flex-item" id="item1">
+                    <p>Item 1</p>
+                </div>
+                <div class="flex-item" id="item2">
+                    <p>Item 2</p>
+                </div>
+                <div class="flex-item" id="item3">
+                    <p>Item 3</p>
+                </div>
+                <div class="flex-item" id="item4">
+                    <p>Item 4</p>
+                </div>
+                <div class="flex-item" id="item5">
+                    <p>Item 5</p>
+                </div>
+                <div class="flex-item" id="item6">
+                    <p>Item 6</p>
+                </div>
+            </div>
             <div id="controls">
                 <div id="toggle-code-container">
-  <button id="toggle-code">Show Code</button>
-</div>
+                    <button id="toggle-code">Show Code</button>
+                </div>
 
                 <div id="display-container">
                     <input name="display-type" id="display-type" type="checkbox" value="flexbox">
@@ -114,12 +127,12 @@
                 <div id="reset-container">
                     <button id="reset">Reset</button>
                 </div>
-                
+
             </div>
             <div id="css-output-container">
-                    <h3>Generated CSS</h3>
-                    <pre id="css-output"></pre>
-                </div>
+                <h3>Generated CSS</h3>
+                <pre id="css-output"></pre>
+            </div>
         </div>
     </main>
     <footer>

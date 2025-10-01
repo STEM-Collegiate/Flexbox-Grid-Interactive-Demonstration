@@ -11,10 +11,12 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
-  overflow: hidden; /* stop body scrolling */
+  overflow: hidden;
+  /* stop body scrolling */
 }
 
 body {
@@ -27,7 +29,8 @@ body {
   text-align: center;
 }
 
-header, footer {
+header,
+footer {
   flex-shrink: 0;
 }
 
@@ -38,7 +41,8 @@ h1 {
 main {
   flex: 1;
   display: flex;
-  overflow: hidden; /* stop main scrolling */
+  overflow: hidden;
+  /* stop main scrolling */
 }
 
 #demo {
@@ -46,13 +50,19 @@ main {
   display: grid;
   gap: 20px;
   padding: 20px;
-  overflow: hidden; /* ensure demo doesn’t scroll */
+  overflow: hidden;
+  /* ensure demo doesn’t scroll */
   height: 100%;
   transition: 1s;
 }
 
-.show-code { grid-template-columns: 1fr 300px 300px; }
-.hide-code { grid-template-columns: 1fr 300px 0px; }
+.show-code {
+  grid-template-columns: 1fr 300px 300px;
+}
+
+.hide-code {
+  grid-template-columns: 1fr 300px 0px;
+}
 
 #gridbox {
   width: 100%;
@@ -62,26 +72,31 @@ main {
   border: 4px solid #666;
   display: block;
   gap: 5px;
-  overflow: hidden; /* contain items */
+  overflow: hidden;
+  /* contain items */
 }
 
 .grid-item {
-  min-width: 0;  /* let items shrink */
-  min-height: 0; /* let items shrink */
-  display: flex; /* center text */
+  min-width: 0;
+  /* let items shrink */
+  min-height: 0;
+  /* let items shrink */
+  display: flex;
+  /* center text */
   justify-content: center;
   align-items: center;
   padding: 10px;
   border-radius: 8px;
-  border: 2px solid #222;
+  border: 4px solid #ffffff;
   cursor: pointer;
-  color: #000;
-  transition: 0.5s;
+  color: white;
+  transition: 0.2s;
   overflow: hidden;
 }
 
 .grid-item.active {
-  outline: 3px solid yellow;
+  border: 4px solid rgb(150, 150, 150);
+  color: rgb(0, 0, 0);
 }
 
 #controls {
@@ -97,7 +112,8 @@ button {
   cursor: pointer;
 }
 
-input, select {
+input,
+select {
   cursor: pointer;
 }
 
@@ -110,4 +126,9 @@ input, select {
   font-family: monospace;
   text-align: left;
   overflow: auto;
+}
+
+a,
+a:visited {
+  color: white;
 }
