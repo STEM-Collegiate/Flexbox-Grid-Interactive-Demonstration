@@ -1,5 +1,6 @@
 $(document).ready(function () {
     let $activeItem = null;
+    let childSizeMode = "auto"; // "auto" or "fill"
 
     // Save initial state for reset
     const initialState = {
@@ -153,79 +154,94 @@ $(document).ready(function () {
         $("input[name='flex'][value='0']").prop("checked", true);
     });
 
-       // ---- UPDATE CSS OUTPUT ----
-function updateCssOutput() {
-    let containerCss = $("#flexbox").attr("style") || "";
-    let output = `#flexbox {\n`;
+    // ---- UPDATE CSS OUTPUT ----
+    function updateCssOutput() {
+        let containerCss = $("#flexbox").attr("style") || "";
+        let output = `#flexbox {\n`;
 
-    // Format container CSS
-    containerCss.split(";").forEach(rule => {
-        if (rule.trim() !== "") {
-            output += "  " + rule.trim() + ";\n";
+        // Format container CSS
+        containerCss.split(";").forEach(rule => {
+            if (rule.trim() !== "") {
+                output += "  " + rule.trim() + ";\n";
+            }
+        });
+        output += `}\n\n`;
+        if (childSizeMode === "fill") {
+            output += `.flex-item {\n  width: 100%;\n  height: 100%;\n}\n\n`;
         }
-    });
-    output += `}\n\n`;
+        // Go through every flex item and print its styles if any
+        $("#flexbox .flex-item").each(function () {
+            let id = $(this).attr("id");
+            let itemCss = $(this).attr("style") || "";
+            if (itemCss.trim() !== "") {
+                output += `#${id} {\n`;
+                itemCss.split(";").forEach(rule => {
+                    if (rule.trim() !== "") {
+                        output += "  " + rule.trim() + ";\n";
+                    }
+                });
+                output += `}\n\n`;
+            }
+        });
 
-    // Go through every flex item and print its styles if any
-    $("#flexbox .flex-item").each(function () {
-        let id = $(this).attr("id");
-        let itemCss = $(this).attr("style") || "";
-        if (itemCss.trim() !== "") {
-            output += `#${id} {\n`;
-            itemCss.split(";").forEach(rule => {
-                if (rule.trim() !== "") {
-                    output += "  " + rule.trim() + ";\n";
-                }
-            });
-            output += `}\n\n`;
-        }
-    });
-
-    $("#css-output").text(output.trim());
-}
-
-// Call updater after every control interaction
-$("input, select, #reset").on("input change click", updateCssOutput);
-
-// Initial call
-updateCssOutput();
-
-// ---- DYNAMIC ITEM COUNT ----
-$("#item-count").on("input", function () {
-    let count = parseInt($(this).val());
-    $("#item-count-value").text(count);
-
-    let $flexbox = $("#flexbox");
-    let currentCount = $flexbox.children(".flex-item").length;
-
-    if (count > currentCount) {
-        for (let i = currentCount + 1; i <= count; i++) {
-            $flexbox.append(`<div class="flex-item" id="item${i}"><p>Item ${i}</p></div>`);
-        }
-    } else if (count < currentCount) {
-        $flexbox.children(".flex-item").slice(count).remove();
-        if ($activeItem && $activeItem.index() >= count) {
-            $activeItem = null;
-            $("#selected-element").text("none");
-            $("#flexbox .flex-item").removeClass("active");
-        }
+        $("#css-output").text(output.trim());
     }
 
+    // Call updater after every control interaction
+    $("input, select, #reset").on("input change click", updateCssOutput);
+
+    // Initial call
     updateCssOutput();
-});
 
-// ---- TOGGLE CODE PANEL ----
-$("#toggle-code").on("click", function () {
-    let $panel = $("#demo");
+    // ---- DYNAMIC ITEM COUNT ----
+    $("#item-count").on("input", function () {
+        let count = parseInt($(this).val());
+        $("#item-count-value").text(count);
 
-    if ($panel.hasClass("hide-code")) {
-        $panel.removeClass("hide-code").addClass("show-code");
-        $(this).text("Hide Code");
-    } else {
-        $panel.removeClass("show-code").addClass("hide-code");
-        $(this).text("Show Code");
-    }
-});
+        let $flexbox = $("#flexbox");
+        let currentCount = $flexbox.children(".flex-item").length;
 
+        if (count > currentCount) {
+            for (let i = currentCount + 1; i <= count; i++) {
+                $flexbox.append(`<div class="flex-item" id="item${i}"><p>Item ${i}</p></div>`);
+            }
+        } else if (count < currentCount) {
+            $flexbox.children(".flex-item").slice(count).remove();
+            if ($activeItem && $activeItem.index() >= count) {
+                $activeItem = null;
+                $("#selected-element").text("none");
+                $("#flexbox .flex-item").removeClass("active");
+            }
+        }
+
+        updateCssOutput();
+    });
+
+    // ---- TOGGLE CODE PANEL ----
+    $("#toggle-code").on("click", function () {
+        let $panel = $("#demo");
+
+        if ($panel.hasClass("hide-code")) {
+            $panel.removeClass("hide-code").addClass("show-code");
+            $(this).text("Hide Code");
+        } else {
+            $panel.removeClass("show-code").addClass("hide-code");
+            $(this).text("Show Code");
+        }
+    });
+
+    $("input[name='child-size']").on("change", function () {
+        childSizeMode = $(this).val();
+
+        if (childSizeMode === "fill") {
+            // Apply directly to the elements
+            $(".flex-item").addClass("fill");
+        } else {
+            // Reset back to auto sizing
+            $(".flex-item").removeClass("fill");
+        }
+
+        updateCssOutput();
+    });
 
 });

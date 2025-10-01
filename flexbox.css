@@ -96,13 +96,17 @@ footer {
     max-width: 100%;
     margin: auto;
     padding: 20px;
-    border-style: solid;
     background:
         linear-gradient(var(--gd-ang), var(--dem-gd-st), var(--dem-gd-end)) padding-box,
         linear-gradient(var(--gd-ang), var(--dem-bd-st), var(--dem-bd-end)) border-box;
     border-radius: 20px;
     border: 4px solid transparent;
     gap: 5px;
+}
+
+.fill {
+    height: 100%;
+    width: 100%;
 }
 
 .flex-item {

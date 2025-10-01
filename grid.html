@@ -12,7 +12,7 @@
 
 <body class="flex column">
   <header>
-    <h1>CSS Grid Demonstration Playground</h1>
+    <h1>Grid Demonstration Playground</h1>
     <p>Jump to <a href="flexbox.html">Flexbox Playground</a>.</p>
   </header>
   <main>
@@ -45,27 +45,27 @@
         </div>
 
         <div id="display-container">
-          <input id="display-grid" type="checkbox">
+          <input id="display-grid" type="checkbox" class="pointer">
           <label for="display-grid">Grid</label>
         </div>
 
         <div id="columns-template">
           <label>Columns:</label>
-          <input type="range" id="col-count" min="1" max="5" value="3">
+          <input type="range" id="col-count" min="1" max="5" value="3" class="pointer">
           <span id="col-count-value">3</span>
           <div id="col-inputs"></div>
         </div>
 
         <div id="rows-template">
           <label>Rows:</label>
-          <input type="range" id="row-count" min="0" max="5" value="0">
+          <input type="range" id="row-count" min="0" max="5" value="0" class="pointer">
           <span id="row-count-value">0</span>
           <div id="row-inputs"></div>
         </div>
 
         <div id="grid-auto-flow">
           <label for="auto-flow">Grid Fill:</label>
-          <select id="auto-flow">
+          <select id="auto-flow" class="pointer">
             <option value="row">row</option>
             <option value="column">column</option>
             <option value="dense">dense</option>
@@ -76,13 +76,13 @@
 
         <div id="gap-container">
           <label for="gap">Gap (px):</label>
-          <input type="range" id="gap" min="0" max="100" step="5" value="10">
+          <input type="range" id="gap" min="0" max="100" step="5" value="10" class="pointer">
           <span id="gap-value">10</span>
         </div>
 
         <div id="item-count-container">
           <label for="item-count">Number of Items:</label>
-          <input type="range" id="item-count" min="1" max="25" value="6">
+          <input type="range" id="item-count" min="1" max="25" value="6" class="pointer">
           <span id="item-count-value">6</span>
         </div>
 
@@ -91,25 +91,25 @@
 
         <div id="col-start-container">
           <label for="col-start">Column Start:</label>
-          <input type="range" id="col-start" min="0" max="5" value="0">
+          <input type="range" id="col-start" min="0" max="5" value="0" class="pointer">
           <span id="col-start-value">1</span>
         </div>
 
         <div id="col-span-container">
           <label for="col-span">Column Span:</label>
-          <input type="range" id="col-span" min="0" max="5" value="0">
+          <input type="range" id="col-span" min="0" max="5" value="0" class="pointer">
           <span id="col-span-value">1</span>
         </div>
 
         <div id="row-start-container">
           <label for="row-start">Row Start:</label>
-          <input type="range" id="row-start" min="0" max="5" value="0">
+          <input type="range" id="row-start" min="0" max="5" value="0" class="pointer">
           <span id="row-start-value">1</span>
         </div>
 
         <div id="row-span-container">
           <label for="row-span">Row Span:</label>
-          <input type="range" id="row-span" min="0" max="5" value="0">
+          <input type="range" id="row-span" min="0" max="5" value="0" class="pointer">
           <span id="row-span-value">1</span>
         </div>
 

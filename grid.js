@@ -2,13 +2,7 @@ $(function () {
     let $activeItem = null;
     const initialState = { colCount: 3, rowCount: 0, gap: 10, itemCount: 6 };
 
-    // Assign hues for item backgrounds
-    function colorizeItems() {
-        $("#gridbox .grid-item").each(function (i) {
-            let hue = (360 / 25) * i;
-            $(this).css("background", `hsl(${hue}, 80%, 60%)`);
-        });
-    }
+
 
     // Build column/row inputs
     function buildInputs(type, count, containerId) {
@@ -76,51 +70,69 @@ $(function () {
         output += "}\n\n";
 
         // Go through every grid item and print its styles if any (excluding defaults)
-$("#gridbox .grid-item").each(function () {
-  let id = $(this).attr("id");
-  let itemCss = $(this).attr("style") || "";
+        $("#gridbox .grid-item").each(function () {
+            let id = $(this).attr("id");
+            let itemCss = $(this).attr("style") || "";
 
-  // Parse inline style rules into key/value pairs
-  let rules = itemCss.split(";").map(r => r.trim()).filter(r => r !== "");
-  let filtered = [];
+            // Parse inline style rules into key/value pairs
+            let rules = itemCss.split(";").map(r => r.trim()).filter(r => r !== "");
+            let filtered = [];
 
-  rules.forEach(rule => {
-    // skip backgrounds (always present because of colorization)
-    if (rule.startsWith("background")) return;
+            rules.forEach(rule => {
 
-    // skip empty or default grid values
-    if (rule === "grid-column: auto" || rule === "grid-row: auto") return;
 
-    filtered.push(rule);
-  });
+                // skip empty or default grid values
+                if (rule === "grid-column: auto" || rule === "grid-row: auto") return;
 
-  // Only output if the item has meaningful overrides
-  if (filtered.length > 0) {
-    output += `#${id} {\n`;
-    filtered.forEach(r => {
-      output += "  " + r + ";\n";
-    });
-    output += "}\n\n";
-  }
-});
+                filtered.push(rule);
+            });
+
+            // Only output if the item has meaningful overrides
+            if (filtered.length > 0) {
+                output += `#${id} {\n`;
+                filtered.forEach(r => {
+                    output += "  " + r + ";\n";
+                });
+                output += "}\n\n";
+            }
+        });
 
 
         $("#css-output").text(output.trim());
     }
 
     // Select items
+    // ---- ITEM SELECTION ----
     $("#gridbox").on("click", ".grid-item", function () {
-        if ($(this).hasClass("active")) {
-            $(this).removeClass("active");
+        let $this = $(this);
+
+        if ($this.attr("id") === "active") {
+            // Deactivate currently active item
+            let originalId = $this.data("original-id");
+            $this.attr("id", originalId).removeClass("active");
+            $this.removeData("original-id");
             $activeItem = null;
             $("#selected-element").text("none");
         } else {
-            $("#gridbox .grid-item").removeClass("active");
-            $(this).addClass("active");
-            $activeItem = $(this);
-            $("#selected-element").text($(this).find("p").text());
+            // Deactivate any currently active item
+            let $currentActive = $("#gridbox #active");
+            if ($currentActive.length) {
+                let originalId = $currentActive.data("original-id");
+                $currentActive.attr("id", originalId).removeClass("active");
+                $currentActive.removeData("original-id");
+            }
+
+            // Activate this item
+            let oldId = $this.attr("id");
+            $this.data("original-id", oldId);
+            $this.attr("id", "active").addClass("active");
+            $activeItem = $this;
+            $("#selected-element").text(oldId);
         }
+
+        updateCssOutput();
     });
+
 
     // Item controls
     $("#col-start, #col-span, #row-start, #row-span").on("input", function () {
@@ -190,7 +202,6 @@ $("#gridbox .grid-item").each(function () {
         for (let i = 1; i <= c; i++) {
             $box.append(`<div class="grid-item" id="item${i}"><p>Item ${i}</p></div>`);
         }
-        colorizeItems();
         updateCssOutput();
     });
 
