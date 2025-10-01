@@ -278,3 +278,8 @@ a:visited {
   background: linear-gradient(var(--gd-ang), hsl(360, 90%, 45%), hsl(360, 90%, 25%)) padding-box,
     linear-gradient(var(--gd-ang), hsl(360, 90%, 55%), hsl(360, 90%, 35%)) border-box;
 }
+
+#reset-container,
+#toggle-code-container {
+  align-self: center;
+}

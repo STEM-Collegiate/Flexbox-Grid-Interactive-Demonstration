@@ -147,7 +147,8 @@ footer {
     align-items: stretch;
 }
 
-#reset-container {
+#reset-container,
+#toggle-code-container {
     align-self: center;
 }
 
